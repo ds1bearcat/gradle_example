@@ -1,0 +1,191 @@
+{
+  "name" : "assemble",
+  "path" : ":app:assemble",
+  "finalizer" : false,
+  "group" : "build",
+  "type" : "org.gradle.api.DefaultTask",
+  "queuePosition" : 8,
+  "dependencies" : [ {
+    "name" : "distTar",
+    "path" : ":app:distTar",
+    "finalizer" : false,
+    "group" : "distribution",
+    "type" : "org.gradle.api.tasks.bundling.Tar",
+    "queuePosition" : 6,
+    "dependencies" : [ {
+      "name" : "jar",
+      "path" : ":app:jar",
+      "finalizer" : false,
+      "group" : "build",
+      "type" : "org.gradle.api.tasks.bundling.Jar",
+      "queuePosition" : 4,
+      "dependencies" : [ {
+        "name" : "classes",
+        "path" : ":app:classes",
+        "finalizer" : false,
+        "group" : "build",
+        "type" : "org.gradle.api.DefaultTask",
+        "queuePosition" : 3,
+        "dependencies" : [ {
+          "name" : "compileJava",
+          "path" : ":app:compileJava",
+          "finalizer" : false,
+          "group" : null,
+          "type" : "org.gradle.api.tasks.compile.JavaCompile",
+          "queuePosition" : 1
+        }, {
+          "name" : "processResources",
+          "path" : ":app:processResources",
+          "finalizer" : false,
+          "group" : null,
+          "type" : "org.gradle.language.jvm.tasks.ProcessResources",
+          "queuePosition" : 2
+        } ]
+      } ]
+    }, {
+      "name" : "startScripts",
+      "path" : ":app:startScripts",
+      "finalizer" : false,
+      "group" : null,
+      "type" : "org.gradle.api.tasks.application.CreateStartScripts",
+      "queuePosition" : 5,
+      "dependencies" : [ {
+        "name" : "jar",
+        "path" : ":app:jar",
+        "finalizer" : false,
+        "group" : "build",
+        "type" : "org.gradle.api.tasks.bundling.Jar",
+        "queuePosition" : 4,
+        "dependencies" : [ {
+          "name" : "classes",
+          "path" : ":app:classes",
+          "finalizer" : false,
+          "group" : "build",
+          "type" : "org.gradle.api.DefaultTask",
+          "queuePosition" : 3,
+          "dependencies" : [ {
+            "name" : "compileJava",
+            "path" : ":app:compileJava",
+            "finalizer" : false,
+            "group" : null,
+            "type" : "org.gradle.api.tasks.compile.JavaCompile",
+            "queuePosition" : 1
+          }, {
+            "name" : "processResources",
+            "path" : ":app:processResources",
+            "finalizer" : false,
+            "group" : null,
+            "type" : "org.gradle.language.jvm.tasks.ProcessResources",
+            "queuePosition" : 2
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "distZip",
+    "path" : ":app:distZip",
+    "finalizer" : false,
+    "group" : "distribution",
+    "type" : "org.gradle.api.tasks.bundling.Zip",
+    "queuePosition" : 7,
+    "dependencies" : [ {
+      "name" : "jar",
+      "path" : ":app:jar",
+      "finalizer" : false,
+      "group" : "build",
+      "type" : "org.gradle.api.tasks.bundling.Jar",
+      "queuePosition" : 4,
+      "dependencies" : [ {
+        "name" : "classes",
+        "path" : ":app:classes",
+        "finalizer" : false,
+        "group" : "build",
+        "type" : "org.gradle.api.DefaultTask",
+        "queuePosition" : 3,
+        "dependencies" : [ {
+          "name" : "compileJava",
+          "path" : ":app:compileJava",
+          "finalizer" : false,
+          "group" : null,
+          "type" : "org.gradle.api.tasks.compile.JavaCompile",
+          "queuePosition" : 1
+        }, {
+          "name" : "processResources",
+          "path" : ":app:processResources",
+          "finalizer" : false,
+          "group" : null,
+          "type" : "org.gradle.language.jvm.tasks.ProcessResources",
+          "queuePosition" : 2
+        } ]
+      } ]
+    }, {
+      "name" : "startScripts",
+      "path" : ":app:startScripts",
+      "finalizer" : false,
+      "group" : null,
+      "type" : "org.gradle.api.tasks.application.CreateStartScripts",
+      "queuePosition" : 5,
+      "dependencies" : [ {
+        "name" : "jar",
+        "path" : ":app:jar",
+        "finalizer" : false,
+        "group" : "build",
+        "type" : "org.gradle.api.tasks.bundling.Jar",
+        "queuePosition" : 4,
+        "dependencies" : [ {
+          "name" : "classes",
+          "path" : ":app:classes",
+          "finalizer" : false,
+          "group" : "build",
+          "type" : "org.gradle.api.DefaultTask",
+          "queuePosition" : 3,
+          "dependencies" : [ {
+            "name" : "compileJava",
+            "path" : ":app:compileJava",
+            "finalizer" : false,
+            "group" : null,
+            "type" : "org.gradle.api.tasks.compile.JavaCompile",
+            "queuePosition" : 1
+          }, {
+            "name" : "processResources",
+            "path" : ":app:processResources",
+            "finalizer" : false,
+            "group" : null,
+            "type" : "org.gradle.language.jvm.tasks.ProcessResources",
+            "queuePosition" : 2
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "jar",
+    "path" : ":app:jar",
+    "finalizer" : false,
+    "group" : "build",
+    "type" : "org.gradle.api.tasks.bundling.Jar",
+    "queuePosition" : 4,
+    "dependencies" : [ {
+      "name" : "classes",
+      "path" : ":app:classes",
+      "finalizer" : false,
+      "group" : "build",
+      "type" : "org.gradle.api.DefaultTask",
+      "queuePosition" : 3,
+      "dependencies" : [ {
+        "name" : "compileJava",
+        "path" : ":app:compileJava",
+        "finalizer" : false,
+        "group" : null,
+        "type" : "org.gradle.api.tasks.compile.JavaCompile",
+        "queuePosition" : 1
+      }, {
+        "name" : "processResources",
+        "path" : ":app:processResources",
+        "finalizer" : false,
+        "group" : null,
+        "type" : "org.gradle.language.jvm.tasks.ProcessResources",
+        "queuePosition" : 2
+      } ]
+    } ]
+  } ]
+}
